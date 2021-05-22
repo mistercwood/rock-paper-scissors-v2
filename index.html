@@ -2,10 +2,23 @@
 <html>
 <head>
     <title>Rock! Paper! Scissors!</title>
+    <link rel="stylesheet" href="styles.css" />
     <meta charset="UTF-8"/>
 </head>
 <body>
-    <p>Please press F12 and then Esc to open browser console, then refresh page to commence playing.</p>
+    <div class="gameArea">
+        <div class="pageHeading">Rock. Paper. Scissors.</div>
+        <div class="rpsChoices">
+            <img id="rock" src="images/the-rock.png" />
+            <img id="paper" src="images/paper-warrior.jpg" />
+            <img id="scissors" src="images/ed-scissors.png" />
+        </div>
+        <div class="scores">
+            <div class="playerScore">Player: 0</div>
+            <div class="compScore">Computer: 0</div>
+        </div>
+        <div class="gameStatus">Choose your fighter to start the game, best of 5 wins!</div>
+    </div>
 
     <script src="script.js"></script>
 </body>

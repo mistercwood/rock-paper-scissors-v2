@@ -1,5 +1,3 @@
-console.log("Welcome to Rock-Paper-Scissors! Good luck!");
-
 let playerSelection;
 let compSelection;
 let playerScore = 0;
@@ -7,13 +5,13 @@ let compScore = 0;
 
 // Get player choice from prompt, alert for non-valid entries and try again if needed.
 function playerPrompt() {
-    let playerChoice = prompt("Make your choice: 'rock', 'paper', or 'scissors'?");
-    playerChoice = playerChoice.toLowerCase();
-    while ((playerChoice != "rock") && (playerChoice != "paper") && (playerChoice != "scissors")) {
+    let playerClick = prompt("Make your choice: 'rock', 'paper', or 'scissors'?");
+    playerClick = playerClick.toLowerCase();
+    while ((playerClick != "rock") && (playerClick != "paper") && (playerClick != "scissors")) {
         alert("You can only choose 'rock', 'paper', or 'scissors', please try again!");
-        playerChoice = prompt("Make your choice: 'rock', 'paper', or 'scissors'?");
+        playerClick = prompt("Make your choice: 'rock', 'paper', or 'scissors'?");
     }
-    return playerChoice;
+    return playerClick;
 }
 
 // Generate Computer choice by random selection.
@@ -62,5 +60,5 @@ function game() {
 }
 
 // Initialise the game and display a farewell message once win conditions are met.
-game();   
+// game();   
 console.log("Game Over! Thanks for playing!");

@@ -1,0 +1,86 @@
+body {
+    margin: 0;
+    min-height: 100vh;
+    background: linear-gradient(40deg, rgba(231,87,15,0.989233193277311) 25%, rgb(255, 171, 45) 98%);  
+}
+
+.gameArea {
+    align-items: center;
+    justify-content: center;
+}
+
+.pageHeading {
+    display: flex;
+    flex: 1;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 100px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    box-shadow:  25px 25px 60px #884111,
+    -25px -25px 60px #ff9727;
+}
+
+.rpsChoices {
+    display: flex;
+    flex: 1;
+    align-items: center;
+    justify-content: center;
+    margin: 50px;
+}
+
+#rock, #paper, #scissors {
+    height: 220px;
+    border: 8px solid rgb(255, 255, 255);
+    margin: 30px;
+    border-radius: 50%;
+    background: #e36c1c;
+    box-shadow:  25px 25px 60px #884111,
+             -25px -25px 60px #ff9727;
+}
+
+#rock:hover, #paper:hover, #scissors:hover {
+    position: relative;
+    top: -10px;
+}
+
+.scores {
+    display: flex;
+    flex: 1;
+    align-items: center;
+    justify-content: center;
+    margin: 50px;
+    color: white;
+    font-size: 50px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+.playerScore {
+    display: flex;
+    flex: 1;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 50px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+.compScore {
+    display: flex;
+    flex: 1;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 50px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+.gameStatus {
+    display: flex;
+    flex: 1;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 50px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
