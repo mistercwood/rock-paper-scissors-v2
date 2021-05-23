@@ -22,20 +22,31 @@ scissorsButton.addEventListener('click', () => {
     playRound('scissors', compSelection);
 });
 
-// Generate Computer choice by random selection.
 function computerPlay() {
     options = ["rock", "paper", "scissors"]
     compChoice = options[Math.floor(Math.random() * 3)];
     return compChoice;
 }
 
-function scoreCheck() {
+let resetButton = document.querySelector('#resetGame');
+resetButton.addEventListener('click', () => {
+    resetGame();
+});
+
+function resetGame() {
+    playerScore = 0;
+    compScore = 0;
+    playerScoreText.textContent = 'Player: 0';
+    compScoreText.textContent = 'Computer: 0';
+    gameStatusText.textContent = 'Choose your fighter to start the game, best of 5 wins!';
+}
+
+function winCheck() {
     if ((playerScore + compScore) >= 5) {
         let winner = (playerScore > compScore) ? (`You won, ${playerScore} to ${compScore}.`)
         : (`You lost, ${playerScore} to ${compScore}.`);
-        gameStatusText.textContent = winner + ' Reload page to play again!';
+        gameStatusText.textContent = winner;
     }
-
 }
 
 function playRound(playerSelection, compSelection) {
@@ -65,6 +76,5 @@ function playRound(playerSelection, compSelection) {
             gameStatusText.textContent = `You both chose ${playerSelection}. It's a draw!`;
         }
     }
-
-    scoreCheck();    
+    winCheck();    
 }

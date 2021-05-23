@@ -65,3 +65,16 @@ body {
 #gameStatusText {
     text-decoration: underline;
 }
+
+a#resetGame {
+    display: flex;
+    flex: 1;
+    align-items: center;
+    justify-content: center;
+    align-self: center;
+    color: white;
+    font-size: 40px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    margin-top: 50px;
+    text-decoration: underline dotted;
+}
