@@ -50,37 +50,14 @@ body {
     align-items: center;
     justify-content: center;
     margin: 50px;
-    color: white;
-    font-size: 50px;
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
 
-.playerScore {
+#playerScoreText, #compScoreText, #gameStatusText {
     display: flex;
     flex: 1;
     align-items: center;
     justify-content: center;
     color: white;
-    font-size: 50px;
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-}
-
-.compScore {
-    display: flex;
-    flex: 1;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    font-size: 50px;
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-}
-
-.gameStatus {
-    display: flex;
-    flex: 1;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    font-size: 50px;
+    font-size: 60px;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }

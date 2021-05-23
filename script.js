@@ -3,16 +3,24 @@ let compSelection;
 let playerScore = 0;
 let compScore = 0;
 
-// Get player choice from prompt, alert for non-valid entries and try again if needed.
-function playerPrompt() {
-    let playerClick = prompt("Make your choice: 'rock', 'paper', or 'scissors'?");
-    playerClick = playerClick.toLowerCase();
-    while ((playerClick != "rock") && (playerClick != "paper") && (playerClick != "scissors")) {
-        alert("You can only choose 'rock', 'paper', or 'scissors', please try again!");
-        playerClick = prompt("Make your choice: 'rock', 'paper', or 'scissors'?");
-    }
-    return playerClick;
-}
+const playerScoreText = document.querySelector('#playerScoreText');
+const compScoreText = document.querySelector('#compScoreText');
+const gameStatusText = document.querySelector('#gameStatusText');
+
+const rockButton = document.querySelector('#rock');
+rockButton.addEventListener('click', () => {
+    playRound('rock', compSelection);
+});
+
+const paperButton = document.querySelector('#paper');
+paperButton.addEventListener('click', () => {
+    playRound('paper', compSelection);
+});
+
+const scissorsButton = document.querySelector('#scissors');
+scissorsButton.addEventListener('click', () => {
+    playRound('scissors', compSelection);
+});
 
 // Generate Computer choice by random selection.
 function computerPlay() {
@@ -21,44 +29,37 @@ function computerPlay() {
     return compChoice;
 }
 
-// Get both choices, check to see whether Player or Computer wins, return the outcome.
+function scoreCheck() {
+    if ((playerScore + compScore) >= 5) {
+        let winner = (playerScore > compScore) ? (`You won, ${playerScore} to ${compScore}.`)
+        : (`You lost, ${playerScore} to ${compScore}.`);
+        gameStatusText.textContent = winner;
+    }
+}
+
 function playRound(playerSelection, compSelection) {
     
-    playerSelection = playerPrompt();
     compSelection = computerPlay();
 
     if ( (playerSelection === "rock" && compSelection === "scissors") || 
     (playerSelection === "paper" && compSelection === "rock") || 
     (playerSelection === "scissors" && compSelection === "paper") ) {
-        result = `Well done, ${playerSelection} beats ${compSelection}. You win!`;
+        gameStatusText.textContent = `Well done, ${playerSelection} beats ${compSelection}. You win!`;
         playerScore++;
+        playerScoreText.textContent = `Player: ${playerScore}`;
     }
     else if ( (playerSelection === "rock" && compSelection === "paper") || 
     (playerSelection === "paper" && compSelection === "scissors") || 
     (playerSelection === "scissors" && compSelection === "rock") ) {
-        result = `Oh no, ${compSelection} beats ${playerSelection}. You lose!`;
+        gameStatusText.textContent = `Oh no, ${compSelection} beats ${playerSelection}. You lose!`;
         compScore++;
+        compScoreText.textContent = `Computer: ${compScore}`;
     }
     else if ( (playerSelection === "rock" && compSelection === "rock") || 
     (playerSelection === "paper" && compSelection === "paper") || 
     (playerSelection === "scissors" && compSelection === "scissors") ) {
-        result = `You both chose ${playerSelection}. It's a draw!`;
+        gameStatusText.textContent = `You both chose ${playerSelection}. It's a draw!`;
     }
 
-    return result;
+    scoreCheck();    
 }
-
-// Play 5 times, tracking the wins for both players but ignoring ties, then show who the overall winner is.
-function game() {
-    for (let i = 0; (playerScore + compScore) < 5; i++) {
-        console.log(playRound(playerSelection, compSelection));
-        console.log(`The current score is: Player - ${playerScore}, Computer - ${compScore}.`);
-    }
-    let winner = (playerScore > compScore) ? (`You win, ${playerScore} to ${compScore}.`)
-    : (`You lose, ${playerScore} to ${compScore}.`);
-    console.log(winner);
-}
-
-// Initialise the game and display a farewell message once win conditions are met.
-// game();   
-console.log("Game Over! Thanks for playing!");
