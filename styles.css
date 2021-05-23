@@ -61,3 +61,7 @@ body {
     font-size: 60px;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
+
+#gameStatusText {
+    text-decoration: underline;
+}

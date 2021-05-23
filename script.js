@@ -33,14 +33,16 @@ function scoreCheck() {
     if ((playerScore + compScore) >= 5) {
         let winner = (playerScore > compScore) ? (`You won, ${playerScore} to ${compScore}.`)
         : (`You lost, ${playerScore} to ${compScore}.`);
-        gameStatusText.textContent = winner;
+        gameStatusText.textContent = winner + ' Reload page to play again!';
     }
+
 }
 
 function playRound(playerSelection, compSelection) {
     
     compSelection = computerPlay();
 
+    
     if ( (playerSelection === "rock" && compSelection === "scissors") || 
     (playerSelection === "paper" && compSelection === "rock") || 
     (playerSelection === "scissors" && compSelection === "paper") ) {
