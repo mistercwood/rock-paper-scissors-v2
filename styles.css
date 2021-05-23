@@ -77,4 +77,5 @@ a#resetGame {
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     margin-top: 50px;
     text-decoration: underline dotted;
+    cursor: pointer;
 }

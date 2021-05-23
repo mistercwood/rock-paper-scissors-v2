@@ -28,7 +28,7 @@ function computerPlay() {
     return compChoice;
 }
 
-let resetButton = document.querySelector('#resetGame');
+const resetButton = document.querySelector('#resetGame');
 resetButton.addEventListener('click', () => {
     resetGame();
 });
