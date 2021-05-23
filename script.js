@@ -39,28 +39,31 @@ function scoreCheck() {
 }
 
 function playRound(playerSelection, compSelection) {
-    
-    compSelection = computerPlay();
-
-    
-    if ( (playerSelection === "rock" && compSelection === "scissors") || 
-    (playerSelection === "paper" && compSelection === "rock") || 
-    (playerSelection === "scissors" && compSelection === "paper") ) {
-        gameStatusText.textContent = `Well done, ${playerSelection} beats ${compSelection}. You win!`;
-        playerScore++;
-        playerScoreText.textContent = `Player: ${playerScore}`;
+    if ((playerScore + compScore) >= 5) {
+        return;
     }
-    else if ( (playerSelection === "rock" && compSelection === "paper") || 
-    (playerSelection === "paper" && compSelection === "scissors") || 
-    (playerSelection === "scissors" && compSelection === "rock") ) {
-        gameStatusText.textContent = `Oh no, ${compSelection} beats ${playerSelection}. You lose!`;
-        compScore++;
-        compScoreText.textContent = `Computer: ${compScore}`;
-    }
-    else if ( (playerSelection === "rock" && compSelection === "rock") || 
-    (playerSelection === "paper" && compSelection === "paper") || 
-    (playerSelection === "scissors" && compSelection === "scissors") ) {
-        gameStatusText.textContent = `You both chose ${playerSelection}. It's a draw!`;
+    else {
+        compSelection = computerPlay();
+        
+        if ( (playerSelection === "rock" && compSelection === "scissors") || 
+        (playerSelection === "paper" && compSelection === "rock") || 
+        (playerSelection === "scissors" && compSelection === "paper") ) {
+            gameStatusText.textContent = `Well done, ${playerSelection} beats ${compSelection}. You win!`;
+            playerScore++;
+            playerScoreText.textContent = `Player: ${playerScore}`;
+        }
+        else if ( (playerSelection === "rock" && compSelection === "paper") || 
+        (playerSelection === "paper" && compSelection === "scissors") || 
+        (playerSelection === "scissors" && compSelection === "rock") ) {
+            gameStatusText.textContent = `Oh no, ${compSelection} beats ${playerSelection}. You lose!`;
+            compScore++;
+            compScoreText.textContent = `Computer: ${compScore}`;
+        }
+        else if ( (playerSelection === "rock" && compSelection === "rock") || 
+        (playerSelection === "paper" && compSelection === "paper") || 
+        (playerSelection === "scissors" && compSelection === "scissors") ) {
+            gameStatusText.textContent = `You both chose ${playerSelection}. It's a draw!`;
+        }
     }
 
     scoreCheck();    
